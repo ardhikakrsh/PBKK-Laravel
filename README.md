@@ -17,5 +17,8 @@ Pada section 2 ini saya mempelajari tentang stuktur folder dan blade beserta kom
 Untuk css-nya sendiri saya menggunakan framework tailwind css sehingga user dapat berpindah antar halaman yaitu halaman home, about, contact, dan product. Halaman `home` yaitu tampilan page awal saat user telah melakukan login. Kemudian terdapat `about` yang nantinya akan berisikan informasi secara general lalu ada `contact` dan `product` yang berisikan informasi tentang cara menghubungi perusahaan dan berisikan daftar produk yang ditawarkan.
 
 ## Section 3 (View Data & Model)
+Pada section 3 ini mencoba mengirimkan data ke view lewat route kemudian diperbaiki dengan memindahkan Class Post ke dalam Model dan menerapkan konsep MVC
+![screencapture-localhost-8000-posts-2024-09-19-19_59_34](https://github.com/user-attachments/assets/bb558520-62d5-4c15-864a-c614eab17ede)
+
 
 ## Section 4 (Database Migration & Eloquent ORM)
