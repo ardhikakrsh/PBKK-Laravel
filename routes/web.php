@@ -13,7 +13,7 @@ Route::get('/posts', function () {
     return view('posts', ['title' => 'Supremadu', 'posts' => Post::all()]);
 });
 
-Route::get('posts/{slug}', function ($slug){
+Route::get('posts/{slug}', function ($post){
     $post = Post::find($slug);
     return view('post', ['title' => 'Single Post', 'post' => $post]);
 });
