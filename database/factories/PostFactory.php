@@ -1,6 +1,8 @@
 <?php
 
 namespace Database\Factories;
+
+use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -19,6 +21,7 @@ class PostFactory extends Factory
         return [
             'slug' => Str::slug(fake()->sentence()),
             'title' => fake()->sentence(),
+            'pencipta_id' => User::factory(),
             'price' => fake()->numberBetween(100000, 150000),
             'description' => fake()->text(),
         ];

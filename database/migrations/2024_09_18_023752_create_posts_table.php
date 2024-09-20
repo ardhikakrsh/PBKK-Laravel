@@ -16,6 +16,10 @@ return new class extends Migration
             $table->id();
             $table->string('slug')->unique();
             $table->string('title');
+            $table->foreignId('pencipta_id')->constrained(
+                table: 'users',
+                indexName: 'posts_pencipta_id'
+            );
             $table->integer('price');
             $table->text('description');
             $table->timestamps();
