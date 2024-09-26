@@ -24,3 +24,10 @@ Pada section 3 ini mencoba mengirimkan data ke view lewat route kemudian diperba
 ## Section 4 (Database Migration & Eloquent ORM)
 Pada section 4 ini sudah menggunakan table plus untuk databasenya dan dimigrasi serta membuat data dengan menggunakan php artisan tinker.
 ![screencapture-localhost-8000-posts-2024-09-19-22_10_49](https://github.com/user-attachments/assets/7338de62-0b37-47e8-9bae-c6d8a38ac057)
+
+## Section 5(Model Factories, Eloquent Relationship & Database Seeder)
+Pada section 5 mempelajari model factories yang dapat digunakan sebagai data dummy dan beberapa fitur factory. Kemudian mempelajari juga relationship di dalam Eloquent ORM dan setelah itu mempelajari database seeder agar memudahkan kita ketika mengisi data pada database.
+![screencapture-localhost-8000-posts-2024-09-20-01_34_31](https://github.com/user-attachments/assets/fdd23523-7cd0-45ec-b341-438305b56e9e)
+![screencapture-localhost-8000-penciptas-4-2024-09-20-10_37_50](https://github.com/user-attachments/assets/ae79ebef-aa1d-4db9-bb29-e25de53d2e35)
+
+
