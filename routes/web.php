@@ -4,30 +4,22 @@ use App\Models\Post;
 use App\Models\User;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DashboardController;
 
 
 
-Route::get('/', function () {
-    return view('home', ['title' => 'Welcome']);
-});
 
-Route::get('/posts', function () {
-    return view('posts', ['title' => 'Supremadu', 'posts' => Post::all()]);
-});
+Route::get('/', [DashboardController::class, 'home']);
+Route::post('/logout', [AuthController::class, 'logout']);
 
-Route::get('/posts/{post:slug}', function (Post $post){
-    return view('post', ['title' => 'Single Post', 'post' => $post]);
-});
-
-Route::get('/penciptas/{user}', function (User $user){
-    return view('posts', ['title' => 'Made by ' . $user->name, 'posts' => $user->posts]);
+Route::group(['middleware' => ['guest']], function () {
+    Route::get('/login', [AuthController::class, 'signIn']);
 });
 
 
-Route::get('/contact', function () {
-    return view('contact', ['title' => 'Here to order']);
-});
 
-Route::get('/product', function () {
-    return view('product', ['title' => 'Product']);
-});
+Route::get('/product', [AuthController::class, 'product']);
+Route::get('/posts', [AuthController::class, 'about']);
+Route::get('/contact', [AuthController::class, 'contact']);
