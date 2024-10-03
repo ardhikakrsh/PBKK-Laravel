@@ -9,37 +9,49 @@ use Illuminate\Validation\Rule;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use App\Models\Barang;
+use Illuminate\Support\Facades\Password;
+use Illuminate\Auth\Events\PasswordReset;
 
 class AuthController extends Controller
 {
-    public function product(){
-        return view('MADU.layouts.userAuth.product');  // Pass the data to the view
-    }
-
-    public function about(){
-        $barangs = Barang::all();  // Fetch all barang records
-        return view('MADU.layouts.userAuth.barang', compact('barangs'));  // Pass the data to the view
-    }
-
-    public function contact(){
-        return view('MADU.layouts.userAuth.contact');
-    }
-
     public function signin(){
         return view('MADU.auth.login');
     }
 
-    public function signup(){
-        return view('MADU.auth.register');
+    public function signInStore(){
+        $attributes = request()->validate([
+            'email' => 'required|email',
+            'password' => 'required'
+        ]);
+
+        if (Auth::attempt($attributes)) {
+            session()->regenerate();
+            $userRole = Auth::user()->role;
+
+            if($userRole == RolesType::admin){
+                return redirect()->intended(route('admin.dashboard'))->with(['success' => 'You are logged in.']);
+            } elseif($userRole == RolesType::user){
+                return redirect()->intended(route('user.dashboard'))->with(['success' => 'You are logged in.']);
+            } else{
+                return redirect()->intended(route(''))->with(['success' => 'You are logged in.']);
+            }
+        }
+        else{
+            return back()->withErrors(['email' => 'Your provided credentials could not be verified.']);
+        }
     }
-    
+
     public function logout()
     {
         Auth::logout();     
         return redirect('/login')->with(['success' => 'You\'ve been logged out.']);
 
     }
+
+    public function signup(){
+        return view('MADU.auth.register');
+    }
+    
     
 
     
