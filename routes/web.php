@@ -11,15 +11,22 @@ use App\Http\Controllers\DashboardController;
 
 
 
-Route::get('/', [DashboardController::class, 'home']);
-Route::post('/logout', [AuthController::class, 'logout']);
+Route::get('/', [DashboardController::class, 'index']);
+Route::get('/product', [DashboardController::class, 'product']);
+Route::get('/posts', [DashboardController::class, 'about']);
+Route::get('/contact', [DashboardController::class, 'contact']);
+Route::get('/review', [DashboardController::class, 'review']);
+Route::get('/logout', [AuthController::class, 'logout']);
 
 Route::group(['middleware' => ['guest']], function () {
-    Route::get('/login', [AuthController::class, 'signIn']);
+    Route::get('/login', [AuthController::class, 'signIn'])->name('login');
+    Route::post('/login', [AuthController::class, 'signInStore']);
+    Route::get('/register', [AuthController::class, 'signUp'])->name('register');
+});
+
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/admin/dashboard', [DashboardController::class, 'admin']);
+    // Route::get('/', [DashboardController::class, 'user']);
 });
 
 
-
-Route::get('/product', [AuthController::class, 'product']);
-Route::get('/posts', [AuthController::class, 'about']);
-Route::get('/contact', [AuthController::class, 'contact']);
