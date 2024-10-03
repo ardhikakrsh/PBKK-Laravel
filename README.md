@@ -30,4 +30,11 @@ Pada section 5 mempelajari model factories yang dapat digunakan sebagai data dum
 ![screencapture-localhost-8000-posts-2024-09-20-01_34_31](https://github.com/user-attachments/assets/fdd23523-7cd0-45ec-b341-438305b56e9e)
 ![screencapture-localhost-8000-penciptas-4-2024-09-20-10_37_50](https://github.com/user-attachments/assets/ae79ebef-aa1d-4db9-bb29-e25de53d2e35)
 
+## Section 6(N+1 Problem, Redesign UI, Searching & Pagination)
+![screencapture-127-0-0-1-8000-review-2024-10-03-13_02_47](https://github.com/user-attachments/assets/a016056e-978c-4f12-94b4-b74249831021)
+![screencapture-127-0-0-1-8000-product-2024-10-03-13_06_38](https://github.com/user-attachments/assets/4fce46ee-bd42-40cd-ac8c-de74a0596807)
+![screencapture-127-0-0-1-8000-login-2024-10-03-13_03_09](https://github.com/user-attachments/assets/fb8a447d-29d0-45dc-b7dd-c9cf019df947)
+![screencapture-127-0-0-1-8000-register-2024-10-03-13_03_19](https://github.com/user-attachments/assets/62ff0687-cd0a-4543-b271-6e7b1d7cd9b1)
+
+
 
