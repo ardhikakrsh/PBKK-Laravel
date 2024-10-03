@@ -1,5 +1,4 @@
 @extends('MADU.layouts.app')
-
 @section('home')
 <main>
     <div class="min-h-full">

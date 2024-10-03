@@ -1,4 +1,5 @@
 @extends('MADU.layouts.home')
+@section('title', 'Contact')
 @section('content')
     <div class="bg-gray-100">
         <section class="bg-white dark:bg-gray-900">
