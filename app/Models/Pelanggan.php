@@ -9,14 +9,15 @@ class Pelanggan extends Model
 {
     use HasFactory;
 
+    protected $table = 'pelanggan';
     protected $fillable = [
         'NIK',
         'nomor_telepon',
-        'users_id',
+        'user_id',
     ];
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'users_id');
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

@@ -9,16 +9,18 @@ class Pembelian extends Model
 {
     use HasFactory;
 
+    protected $table = 'pembelian';
+
     protected $fillable = [
         'tanggal_pembelian',
         'total_harga',
-        'users_id',
+        'user_id',
         'barang_id',
     ];
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'users_id');
+        return $this->belongsTo(User::class, 'user_id');
     }
 
     public function barang()
